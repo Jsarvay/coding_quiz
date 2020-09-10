@@ -5,14 +5,21 @@ var answers = document.querySelector(".answers");
 
 var seconds = 75;
 
-function timer() {
-    var timeLeft = setInterval(function() {
-      secondsLeft--;
+function timeClock() {
+    var timerInterval = setInterval(function() {
+      seconds--;
       timer.textContent = "";
-      timer.textContent = "Time: " + secondsLeft;
+      timer.textContent = "Time: " + seconds;
   
-      if(secondsLeft === 0) {
+      if(seconds === 0) {
+        clearInterval(timerInterval)
       }
   
     }, 1000);
-  }
+  };
+
+document.getElementById("start").addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("time");
+    timeClock();
+});
