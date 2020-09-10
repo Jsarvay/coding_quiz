@@ -1,0 +1,19 @@
+.quiz {
+    align-content: center;
+    text-align: center;
+}
+
+.highscores {
+    float: left;
+    padding: 20px;
+    top: 0;
+    left: 0;
+}
+
+.time {
+    text-align: right;
+    padding: 20px;
+    float: right;
+    top: 0;
+    right: 0;
+}

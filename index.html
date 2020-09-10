@@ -8,24 +8,28 @@
     <title>Code Quiz</title>
 </head>
 <body>
-
+    <div class="container">
     <!--Add a header that contains a link to highscore page as well as timer-->
-    <header>
-        <div class = "row">
-            <div class = "col-md-6">
-                <a href="highscores.html">View Highscores</a>
+        <nav>
+            <div class = "row">
+                <div class = "col-md-6 highscores">
+                    <a href="highscores.html">View Highscores</a>
+                </div>
+                <div class = "col-md-6 time">Time: 75
+                </div>
             </div>
-            <div class = "col-md-6 float-right time">
-
-            </div>
-        </div>
-    </header>
+        </nav>
+    </div>
     
+    <!--Main section which includes classes to be changed with javascript to crete working quiz-->
     <main>
-        <div class = "quiz">
-            <h1 class = "question">Coding Quiz</h1>
-            <p class = "welcome">Try to answer the questions before time runs out! Incorrect answers will deduct time from your score!</p>
-            <ul class = "answers"></ul>
+        <div class = "row">
+            <div class = "container-fluid quiz">
+                <h1 class = "question">Coding Quiz</h1>
+                <p class = "welcome">Try to answer the questions before time runs out! Incorrect answers will deduct time from your score!</p>
+                <ul class = "answers"></ul>
+                <button class = "start">Start!</button>
+            </div>
         </div>
     </main>
 </body>
