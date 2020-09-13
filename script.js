@@ -24,10 +24,11 @@ function questionOne() {
   start.remove();
   welcome.textContent = "";
   question.textContent = "CSS stands for what?";
+  //Create an array which creates buttons for each possible answer in a for loop
   var oneAnswers = ["Created System Style", "Custom Style Setup", "Cascading Style Sheet", "Cool Style Stuff"];
   for(var i = 0; i < oneAnswers.length; i++){
     var button = document.createElement("button");
-    button.setAttribute("class", "btn btn-dark");
+    button.setAttribute("class", "btn btn-dark col-md-12");
     button.textContent = oneAnswers[i];
     answers.appendChild(button);
     console.log(oneAnswers[i]);
