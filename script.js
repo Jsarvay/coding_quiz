@@ -29,11 +29,24 @@ function questionOne() {
   for(var i = 0; i < oneAnswers.length; i++){
     var button = document.createElement("button");
     button.setAttribute("class", "btn btn-dark col-md-12");
+    button.setAttribute("data-index", i);
     button.textContent = oneAnswers[i];
     answers.appendChild(button);
-    console.log(oneAnswers[i]);
-  }
-}
+  };
+  //Check clicked answer to see if it is correct. If it is incorrect, subtract 10 seconds and move to next question
+  answers.addEventListener("click", function(event){
+    event.preventDefault();
+    var element = event.target.getAttribute("data-index");
+    if(element === "2"){
+      alert("Correct!");
+    }
+    else{
+      seconds = seconds - 10;
+      alert("Wrong!")
+    }
+  });
+
+};
 
 document.getElementById("start").addEventListener("click", function(event){
     event.preventDefault();
