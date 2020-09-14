@@ -3,6 +3,7 @@ var question = document.querySelector(".question");
 var welcome = document.querySelector(".welcome");
 var answers = document.querySelector(".answers");
 var start = document.querySelector("#start");
+var frameScore = document.querySelector(".frame");
 
 var highScores = []
 
@@ -16,6 +17,7 @@ function timeClock() {
   
       if(seconds === 0) {
         clearInterval(timerInterval);
+        quizEnd();
       }
 
       if(question.textContent === "Finished!"){
@@ -26,11 +28,39 @@ function timeClock() {
     }, 1000);
   };
 
+  init();
+
+  function renderScores() {
+    // Render a new li for each high score
+    for (var i = 0; i < highScores.length; i++) {
+      var highScore = highScores[i];
+  
+      var li = document.createElement("li");
+      li.textContent = highScore;
+      li.setAttribute("data-index", i);
+    
+      frameScore.appendChild(li);
+    }
+  }
+
+  function init() {
+    // Get stored scores from localStorage
+    var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
+  
+    // If scores were retrieved from localStorage, update the highScores array to it
+    if (storedHighScores !== null) {
+      highScores = storedHighScores;
+      renderScores();
+    }
+  
+  }
+
 
 
 //function that calls and populates the page with the first question and answers
 function questionOne() {
   start.remove();
+  frameScore.remove();
   welcome.textContent = "";
   question.textContent = "CSS stands for what?";
   //Create an array which creates buttons for each possible answer in a for loop
@@ -211,26 +241,30 @@ function quizEnd() {
   var input = document.createElement("input");
   input.setAttribute("type", "text");
   form.appendChild(input);
-  input.addEventListener("submit", function(event){
-    event.preventDefault;
+  var submit = document.createElement("button");
+  submit.setAttribute("class", "btn btn-dark");
+  submit.textContent = "Submit!";
+  form.appendChild(submit);
+  submit.addEventListener("click", function(event){
+    event.preventDefault();
     var inputText = input.value.trim();
       if(inputText === ""){
         return;
       }
-    highScores.push(inputText);
+    highScores.push(inputText + ": " + p.textContent);
     var frameScore = document.createElement("ul");
     answers.appendChild(frameScore);
     var recordedScore = document.createElement("li");
-    recordedScore.textContent = inputText;
+    recordedScore.textContent = inputText + ": " + p.textContent;
     input.value = "";
     frameScore.appendChild(recordedScore);
     storeInput();
-    recordInput();
+    recordedScore();
   })
 };
 
 function storeInput(){
-
+  localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
 document.getElementById("start").addEventListener("click", function(event){

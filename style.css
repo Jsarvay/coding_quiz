@@ -1,6 +1,30 @@
+body {
+    background-image: linear-gradient(to right, purple, darkblue)
+}
+
+nav {
+    border: 2px solid black;
+    background: white;
+    font-weight: bold;
+    margin: 30px;
+}
+
+.frame {
+    border: 2px solid black;
+    background: white;
+    font-weight: bold;
+    margin: 30px;
+    padding: 20px;
+}
+
+
 .quiz {
     align-content: center;
     text-align: center;
+    background: white;
+    border: 2px solid black;
+    margin: auto;
+    padding: 30px;
 }
 
 .highscores {
