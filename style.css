@@ -1,5 +1,6 @@
 body {
-    background-image: linear-gradient(to right, purple, darkblue)
+    background-image: linear-gradient(to right, purple, darkblue);
+    font-family: 'Ranchers', cursive;
 }
 
 nav {
