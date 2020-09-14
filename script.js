@@ -15,7 +15,7 @@ function timeClock() {
       seconds--;
       timer.textContent = "Time: " + seconds;
   
-      if(seconds === 0) {
+      if(seconds <= 0) {
         clearInterval(timerInterval);
         quizEnd();
       }
