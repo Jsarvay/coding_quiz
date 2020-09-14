@@ -127,7 +127,7 @@ function questionTwo() {
   }, true);
 };
 
-//function that calls and populates the page with the second question and answers
+//function that calls and populates the page with the third question and answers
 function questionThree() {
   answers.innerHTML = "";
   question.textContent = "What does var stand for?";
@@ -161,7 +161,7 @@ function questionThree() {
   }, true);
 };
 
-//function that calls and populates the page with the second question and answers
+//function that calls and populates the page with the four question and answers
 function questionFour() {
   answers.innerHTML = "";
   question.textContent = "What would you use to symbolize 'not' in javascript?";
@@ -194,7 +194,7 @@ function questionFour() {
   }, true);
 };
 
-//function that calls and populates the page with the second question and answers
+//function that calls and populates the page with the fifth question and answers
 function questionFive() {
   answers.innerHTML = "";
   question.textContent = "What does DOM stand for?";
@@ -263,10 +263,13 @@ function quizEnd() {
   })
 };
 
+//function to store information to local storage
 function storeInput(){
   localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
+
+//event listener for the start button
 document.getElementById("start").addEventListener("click", function(event){
     event.preventDefault();
     timeClock();
